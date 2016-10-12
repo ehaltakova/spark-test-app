@@ -1,0 +1,431 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-top: 50px; 	
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 14px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+<!-- Override bootsrtap navbar -->
+
+.navbar {
+	
+  background-color:white;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
+ 
+ .navbar .container{
+  background-color:white;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
+ 
+.navbar .container-fluid{
+  background-color:white;
+  background-image: none;
+  background-repeat: no-repeat;
+ }
+.navbar-default .navbar-brand {
+  color: #00142a;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #808285;
+}
+.navbar-default .navbar-text {
+  color: #2d2d2d;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #2d2d2d;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #808080;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #337ab7;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #337ab7;
+}
+.navbar-default .navbar-toggle {
+  border-color: #337ab7;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #337ab7;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #4b5254;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #4b5254;
+}
+.navbar-default .navbar-link {
+  color: #4b5254;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #4b5254;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #337ab7;
+  }
+}
+
+.slide-albums {
+	margin-top: 15px;
+}
+
+.users-list {
+	margin-top: 20px;
+}
+
+.isAdmin {
+	margin-left: 5px;
+	margin-bottom: 5px;	
+}
+
+#slideAlbumsTable {
+	font-size: 13px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+
+#copyright {
+	  text-align:center;
+}
+
+#notificationsArea {
+	margin-top: 15px;
+	margin-bottom: -20px;
+}
+
+.file-type-icon {
+	height: 30px;
+	margin-left: 5px;
+}
+
+#editUserContainer{
+	width: 800px;
+	margin: 30px auto 0px  auto;
+	display: block;
+}
+
+#editUserContainer label{
+	text-align: left;
+}
+
+
+#slideAlbumsHeader {
+	float:left;
+}
+
+#slideAlbumsCountBadge {
+	float:left;
+	margin-left: 10px; 
+	margin-bottom: 25px; 
+	margin-top: 12px;
+}
+
+#customerDropDown {
+	float:left;
+	margin-left: 10px; 
+	margin-bottom: 25px; 
+	margin-top: 15px;
+}
+
+.customersSelect {
+	margin-top: -10px;
+	width: 100%;
+}
+
+.slide-album-link {
+	color: black;
+}
+
+#slideForm {
+}
+
+#stepDetails {
+} 
+
+#saveSlides {
+	margin-top: 10px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.slider-btn-group {
+    display: table;
+    margin: 0 auto;
+}
+
+/* slider custom css*/
+.ui-slider-line {
+	width: 2px !important;
+	height: 7px !important;
+}
+
+#tabsContainer {
+	font-size: 13px;
+}
+
+#animations {
+	font-size: 12px;
+}
+
+#slideForm .form-group {
+    margin-bottom: 6px;
+}
+
+.well {
+    background: #bce8f1;
+}
+
+/* Toolbar code */
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.btn-toolbar {
+	width: 25px;
+}
+
+.left {
+	width: 25px;
+} 
+
+right {
+	width: 100%;
+}
+
+/* Toolbar code end */
+
+#contextMenu {
+  font-size: 11px;
+  position: absolute;
+  display:none;
+}
+
+#contextMenu li {
+  font-size: 11px;
+}
+
+.navbar-default .navbar-nav > .locked > a, .navbar-default .navbar-nav > .locked > a:hover, .navbar-default .navbar-nav > .locked > a:focus  {
+	background-color: #d9534f !important;
+}
+
+span.glyphicon-question-sign {
+    font-size: 1.2em;
+}
+
+.panel-danger span.glyphicon-question-sign {
+    font-size: 1.2em;
+    color:#172727;
+}
+
+#circuitTypes table td span.glyphicon-trash {
+    font-size: 1.3em;
+    margin-left: 5px;
+}
+
+span.glyphicon-eye-open {
+    font-size: 1.1em;
+    color:#255783;
+}
+
+.ui-slider-label {
+	margin-top:5px;
+}
+
+#circuitTypesTable{
+	font-size: 12px;
+}
+
+.sp-replacer {
+	width: 25px;
+	height: 25px;
+	background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sp-preview {
+	width: 15px;
+	height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#circuitTypesTable  thead{
+    display:none;
+}
+
+.assign-circ-types {
+	font-size: 14px;
+}
+
+#circTypeListDialog .modal-content {
+    /* new custom width */
+    width: 300px;
+}
+
+#slideAlbumFiles {
+	font-size: 11px;
+}
+
+#slideAlbumFiles img{
+	height: 25px;
+	width: 25px;
+}
+
+#colorBlindBalloonDialog .modal-content {
+    /* new custom width */
+    width: 400px;
+}
+
+#balloonForm label {
+	text-align:left;
+	font-size:12px;
+}
+
+#usersTable thead th {
+	font-size: 16px;
+}
+
+
+/* Viewer */
+
+#wiringDiagramAnimations {
+	margin-right: 20px;
+}
+
+#wiringDiagramCircuits {
+	margin-top: 15px;
+	margin-right: 20px;
+}
+
+#wireDiagramAnimationsPanel a{
+	color: black;
+	font-size: 12px;
+}
+
+#wireDiagramsCircuitsPanel a{
+	color:black;
+	font-size: 12px;
+}
+
+#slideDetailsPanel {
+	background: none;
+	margin: 0 10px 7px 10px;
+	font-size: 11.5px;
+}
+
+#manageBalloonsPanel {
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.customer-logo {
+	display:block;
+    margin:auto;
+}
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+	border-top: none;
+}
+
+.panel-collapse .list-group-item {
+	border:none;
+	border-top: 1px solid #ddd;
+}
+
+.colorRect {
+	width:10px;
+	height:10px;
+	margin-left: 7px;
+}
+
+.colorRadio {
+	margin: 5px 0 0 7px !important;
+}
+
+#highlighter_buttons button{
+	width: 115px;
+}
+
+#highlighter_buttons td{
+	padding: 5px;
+}

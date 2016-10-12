@@ -1,0 +1,1238 @@
+{
+  "(filtered from _MAX_ total entries)": {
+    "value": "(filtered from _MAX_ total entries)",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "***[circuit title here]***": {
+    "value": "***[circuit title here]***",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  ": activate to sort column ascending": {
+    "value": ": activate to sort column ascending",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  ": activate to sort column descending": {
+    "value": ": activate to sort column descending",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "<b> WARNING! CIRCUIT TYPES-WIRES MAPPING INCONSISTENCY REPORT: </b>": {
+    "value": "<b> WARNING! CIRCUIT TYPES-WIRES MAPPING INCONSISTENCY REPORT: </b>",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "<b>NOTE</b>: This action will reload the slide album. If you have any unsaved changes, please save them first.": {
+    "value": "<b>NOTE</b>: This action will reload the slide album. If you have any unsaved changes, please save them first.",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "<b>Slide {ind}</b>: No voltage balloon with id <b>{balloonID}</b> is found in the diagram.\n": {
+    "value": "<b>Slide {ind}</b>: No voltage balloon with id <b>{balloonID}</b> is found in the diagram.\n",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "<h3>Permissions Violation</h3><h4> You are not allowed to access this page. </h4> \n": {
+    "value": "<h3>Permissions Violation</h3><h4> You are not allowed to access this page. </h4> \n",
+    "files": [
+      "code/javascript/accessNotAllowed.js"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-fullscreen\"></span>  <b>ZOOM:</b> Hold Ctrl key and drag mouse over schematic ": {
+    "value": "<span class=\"glyphicon glyphicon-fullscreen\"></span> <b>ZOOM:</b> Hold Ctrl key and drag mouse over schematic",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-new-window\"></span> Create New": {
+    "value": "<span class=\"glyphicon glyphicon-new-window\"></span> Create New",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-off \"></span>  Original View": {
+    "value": "<span class=\"glyphicon glyphicon-off\"></span> Original View",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-resize-horizontal\"></span>   <b>PAN</b>: Hold Alt key and drag mouse over schematic ": {
+    "value": "<span class=\"glyphicon glyphicon-resize-horizontal\"></span> <b>PAN</b>: Hold Alt key and drag mouse over schematic",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-zoom-in\"></span>  Zoom In": {
+    "value": "<span class=\"glyphicon glyphicon-zoom-in\"></span> Zoom In",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "<span class=\"glyphicon glyphicon-zoom-out\"></span>   Zoom Out": {
+    "value": "<span class=\"glyphicon glyphicon-zoom-out\"></span> Zoom Out",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Actors with no labels are found. SALSSA2 will label them automatically and save the changes.": {
+    "value": "Actors with no labels are found. SALSSA2 will label them automatically and save the changes.",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "Add": {
+    "value": "Add",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/slidealbum.html"
+    ]
+  },
+  "Add new circuit type": {
+    "value": "Add new circuit type",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Admin": {
+    "value": "Admin",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Administrator": {
+    "value": "Administrator",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "All Customers": {
+    "value": "All Customers",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "An internal error occured. Please contact your system administrator.": {
+    "value": "An internal error occured. Please contact your system administrator.",
+    "files": [
+      "code/javascript/auth/AuthManager.js",
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/RESTAPIUtil.js",
+      "code/javascript/authoring/SlideAlbum.js",
+      "code/javascript/user.js"
+    ]
+  },
+  "Animation": {
+    "value": "Animation",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Animation data successfully saved.": {
+    "value": "Animation data successfully saved.",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "Are you sure you want to delete the selected user?": {
+    "value": "Are you sure you want to delete the selected user?",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Are you sure you want to delete this file from the slide album?": {
+    "value": "Are you sure you want to delete this file from the slide album?",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Battery Feed": {
+    "value": "Battery Feed",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Bosch Active Directory ID": {
+    "value": "Bosch Active Directory ID",
+    "files": [
+      "code/javascript/user.js",
+      "code/javascript/users.js"
+    ]
+  },
+  "Bosch ID": {
+    "value": "Bosch ID",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "Cancel": {
+    "value": "Cancel",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/FilesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js",
+      "code/javascript/wiring/DCBalloonObject.js"
+    ]
+  },
+  "Cannot create path highlight element for the swith postion {id}.\n Switch position element should be a path, line, polyline or polygon element.": {
+    "value": "Cannot create path highlight element for the swith postion {id}.\n Switch position element should be a path, line, polyline or polygon element.",
+    "files": [
+      "code/javascript/wiring/SwitchObject.js"
+    ]
+  },
+  "Choose Circuit Type": {
+    "value": "Choose Circuit Type",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/slidealbum.html"
+    ]
+  },
+  "Circuit Title:": {
+    "value": "Circuit Title:",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Circuit Type assignments were successfully saved.": {
+    "value": "Circuit Type assignments were successfully saved.",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Circuit Types": {
+    "value": "Circuit Types",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Circuit Types List": {
+    "value": "Circuit Types List",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Circuit Types definitions were successfully saved.": {
+    "value": "Circuit Types definitions were successfully saved.",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Circuit Types list definitions was successfully saved.": {
+    "value": "Circuit Types list definitions was successfully saved.",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Circuit type <b> {_circType} </b> assigned to wire segment with id <b> {id} </b> does not exist for this slide album.": {
+    "value": "Circuit type <b> {_circType} </b> assigned to wire segment with id <b> {id} </b> does not exist for this slide album.",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "Click to view additional information": {
+    "value": "Click to view additional information",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "Color Blind Balloon properties": {
+    "value": "Color Blind Balloon properties",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Create": {
+    "value": "Create",
+    "files": [
+      "code/index.html",
+      "code/users.html"
+    ]
+  },
+  "Create New User": {
+    "value": "Create New User",
+    "files": [
+      "code/javascript/users.js"
+    ]
+  },
+  "Create Slide Album": {
+    "value": "Create Slide Album",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "<span class='glyphicon glyphicon-new-window'></span> Create User": {
+    "value": "<span class='glyphicon glyphicon-new-window'></span> Create User",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "Cusotmers selection is required.": {
+    "value": "Cusotmers selection is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Customer": {
+    "value": "Customer",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Customer:": {
+    "value": "Customer:",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Customers": {
+    "value": "Customers",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Customers:": {
+    "value": "Customers:",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "Data Bus Connection": {
+    "value": "Data Bus Connection",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Default position for switch {name} is already set!\n Verify that positions are hidden or display attribute is set to 'none'.": {
+    "value": "Default position for switch {name} is already set!\n Verify that positions are hidden or display attribute is set to 'none'.",
+    "files": [
+      "code/javascript/wiring/SwitchObject.js"
+    ]
+  },
+  "Delete": {
+    "value": "Delete",
+    "files": [
+      "code/index.html",
+      "code/slidealbum.html",
+      "code/users.html"
+    ]
+  },
+  "Delete File": {
+    "value": "Delete File",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Delete User": {
+    "value": "Delete User",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Delete circuit type": {
+    "value": "Delete circuit type",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Delete slide album": {
+    "value": "Delete slide album",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Download All": {
+    "value": "Download All",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Download Files": {
+    "value": "Download Files",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Download all files in an archive": {
+    "value": "Download all files in an archive",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Duplicate slide album title. Please, select different title.": {
+    "value": "Duplicate slide album title. Please, select different title.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "ERROR: Incorrect file name.": {
+    "value": "ERROR: Incorrect file name.",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Edit": {
+    "value": "Edit",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "Edit Slide Album": {
+    "value": "Edit Slide Album",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Edit Title": {
+    "value": "Edit Title",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Edit User": {
+    "value": "Edit User",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Edit slide album": {
+    "value": "Edit slide album",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Enter Balloon value (4 char maximum):": {
+    "value": "Enter Balloon value (4 char maximum):",
+    "files": [
+      "code/javascript/wiring/DCBalloonObject.js"
+    ]
+  },
+  "Error": {
+    "value": "Error",
+    "files": [
+      "code/error.html"
+    ]
+  },
+  "Error occured during file upload. Slide album could not be created.": {
+    "value": "Error occured during file upload. Slide album could not be created.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Error occured during file upload. Slide album file was not updated.": {
+    "value": "Error occured during file upload. Slide album file was not updated.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Error: file cannot be uploaded. Please, contact your system administrator.": {
+    "value": "Error: file cannot be uploaded. Please, contact your system administrator.",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "File Name": {
+    "value": "File Name",
+    "files": [
+      "code/javascript/index.js"
+    ]
+  },
+  "File name contains invalid characters. Allowed are letters, digits and the following symbols: \"(\", \"), \"_\", \"-\".": {
+    "value": "File name contains invalid characters. Allowed are letters, digits and the following symbols: \"(\", \"), \"_\", \"-\".",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "File should be named as the svg file with the '{ext}' extension:": {
+    "value": "File should be named as the svg file with the '{ext}' extension:",
+    "files": [
+      "code/javascript/authoring/FilesMgr.js"
+    ]
+  },
+  "Filename cannot be empty.": {
+    "value": "Filename cannot be empty.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Filename:": {
+    "value": "Filename:",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Files": {
+    "value": "Files",
+    "files": [
+      "code/index.html",
+      "code/slidealbum.html"
+    ]
+  },
+  "First": {
+    "value": "First",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "First Name": {
+    "value": "First Name",
+    "files": [
+      "code/javascript/user.js",
+      "code/javascript/users.js"
+    ]
+  },
+  "First Name is required.": {
+    "value": "First Name is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/user.js"
+    ]
+  },
+  "First Name:": {
+    "value": "First Name:",
+    "files": [
+      "code/user.html",
+      "code/users.html"
+    ]
+  },
+  "Font Color:": {
+    "value": "Font Color:",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Go to Login page": {
+    "value": "Go to Login page",
+    "files": [
+      "code/javascript/error.js"
+    ]
+  },
+  "Ground": {
+    "value": "Ground",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Home": {
+    "value": "Home",
+    "files": [
+      "code/javascript/helper/navbar.js"
+    ]
+  },
+  "Illustrator/SVG markup error:  Cannot determine index for Switch position, {id}.\n Naming convention violation.": {
+    "value": "Illustrator/SVG markup error:  Cannot determine index for Switch position, {id}.\n Naming convention violation.",
+    "files": [
+      "code/javascript/wiring/SwitchObject.js"
+    ]
+  },
+  "Import": {
+    "value": "Import",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Import &amp; Delete Files": {
+    "value": "Import &amp; Delete Files",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Important: verify that the schematic is correct before continuing.": {
+    "value": "Important: verify that the schematic is correct before continuing.",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "Incorrect file type. Allowed file type is .svg.": {
+    "value": "Incorrect file type. Allowed file type is .svg.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Input Signal": {
+    "value": "Input Signal",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Insert": {
+    "value": "Insert",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Invalid credentials. Please, try again.": {
+    "value": "Invalid credentials. Please, try again.",
+    "files": [
+      "code/javascript/auth/AuthManager.js",
+      "code/javascript/authoring/RESTAPIUtil.js",
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "Last": {
+    "value": "Last",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Last Name": {
+    "value": "Last Name",
+    "files": [
+      "code/javascript/user.js",
+      "code/javascript/users.js"
+    ]
+  },
+  "Last Name is required.": {
+    "value": "Last Name is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/user.js"
+    ]
+  },
+  "Last Name:": {
+    "value": "Last Name:",
+    "files": [
+      "code/user.html",
+      "code/users.html"
+    ]
+  },
+  "Last name is required.": {
+    "value": "Last name is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Link to Help Page": {
+    "value": "Link to Help Page",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "Loading...": {
+    "value": "Loading...",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Locked by me": {
+    "value": "Locked by me",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Locked by {_username}": {
+    "value": "Locked by {_username}",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Login": {
+    "value": "Login",
+    "files": [
+      "code/login.html"
+    ]
+  },
+  "Logout": {
+    "value": "Logout",
+    "files": [
+      "code/javascript/helper/navbar.js"
+    ]
+  },
+  "Manage Slides": {
+    "value": "Manage Slides",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Modification Date": {
+    "value": "Modification Date",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Name..": {
+    "value": "Name..",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Next": {
+    "value": "Next",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "No Permissions": {
+    "value": "No Permissions",
+    "files": [
+      "code/accessNotAllowed.html"
+    ]
+  },
+  "No data available in table": {
+    "value": "No data available in table",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "No matching records found": {
+    "value": "No matching records found",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "No more than 4 characters. Please try again.": {
+    "value": "No more than 4 characters. Please try again.",
+    "files": [
+      "code/javascript/wiring/DCBalloonObject.js"
+    ]
+  },
+  "No switch position {_index} found for switch {id}": {
+    "value": "No switch position {_index} found for switch {id}",
+    "files": [
+      "code/javascript/wiring/SwitchObject.js"
+    ]
+  },
+  "Note: this slide cannot be deleted.": {
+    "value": "Note: this slide cannot be deleted.",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "OK": {
+    "value": "OK",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/FilesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js",
+      "code/javascript/wiring/DCBalloonObject.js"
+    ]
+  },
+  "Open to edit content": {
+    "value": "Open to edit content",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Output Signal/Control Circuit": {
+    "value": "Output Signal/Control Circuit",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "PAN: Hold Alt key and drag mouse over schematic": {
+    "value": "PAN: Hold Alt key and drag mouse over schematic",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "Password": {
+    "value": "Password",
+    "files": [
+      "code/javascript/login.js",
+      "code/javascript/user.js",
+      "code/javascript/users.js"
+    ]
+  },
+  "Password is required.": {
+    "value": "Password is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/login.js",
+      "code/javascript/user.js"
+    ]
+  },
+  "Password:": {
+    "value": "Password:",
+    "files": [
+      "code/user.html",
+      "code/users.html"
+    ]
+  },
+  "Please sign in": {
+    "value": "Please sign in",
+    "files": [
+      "code/login.html"
+    ]
+  },
+  "Please, fill in circuit type name.": {
+    "value": "Please, fill in circuit type name.",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Please, fill in circuit type.": {
+    "value": "Please, fill in circuit type.",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Previous": {
+    "value": "Previous",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Processing...": {
+    "value": "Processing...",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Propagate Changes": {
+    "value": "Propagate Changes",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Reference Voltage": {
+    "value": "Reference Voltage",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Reset": {
+    "value": "Reset",
+    "files": [
+      "code/users.html",
+	  "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "SALSSA2": {
+    "value": "SALSSA2",
+    "files": [
+      "code/javascript/accessNotAllowed.js",
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/error.js",
+      "code/javascript/index.js",
+      "code/javascript/login.js",
+      "code/javascript/slidealbum.js",
+      "code/javascript/user.js",
+      "code/javascript/users.js"
+    ]
+  },
+  "SALSSA2 Home": {
+    "value": "SALSSA2 Home",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "SALSSA2 Slide Album": {
+    "value": "SALSSA2 Slide Album",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "SALSSA2 User Management": {
+    "value": "SALSSA2 User Management",
+    "files": [
+      "code/user.html",
+      "code/users.html"
+    ]
+  },
+  "SVG File:": {
+    "value": "SVG File:",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "SVG file is required.": {
+    "value": "SVG file is required.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Save": {
+    "value": "Save",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Save Changes": {
+    "value": "Save Changes",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Save circuit types definitions": {
+    "value": "Save circuit types definitions",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "Search:": {
+    "value": "Search:",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Select": {
+    "value": "Select",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Select All": {
+    "value": "Select All",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Select Customer": {
+    "value": "Select Customer",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Set Values": {
+    "value": "Set Values",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Show _MENU_ entries": {
+    "value": "Show _MENU_ entries",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Showing 0 to 0 of 0 entries": {
+    "value": "Showing 0 to 0 of 0 entries",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Showing _START_ to _END_ of _TOTAL_ entries": {
+    "value": "Showing _START_ to _END_ of _TOTAL_ entries",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/CircuitTypesMgr.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Slide Album was successfully updated.": {
+    "value": "Slide Album was successfully updated.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Slide Albums": {
+    "value": "Slide Albums",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Slide {ind}: No switch with id {switchID} is found in the diagram.\n": {
+    "value": "Slide {ind}: No switch with id {switchID} is found in the diagram.\n",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "Slide {ind}: No wire segment with id {wireID} is found in the diagram.\n": {
+    "value": "Slide {ind}: No wire segment with id {wireID} is found in the diagram.\n",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "Slider Control Panel": {
+    "value": "Slider Control Panel",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Step Details:": {
+    "value": "Step Details:",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Step Title:": {
+    "value": "Step Title:",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "Switched Battery Feed": {
+    "value": "Switched Battery Feed",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Switched Ground": {
+    "value": "Switched Ground",
+    "files": [
+      "code/config/wiring_animation_constants.js"
+    ]
+  },
+  "Text node holding the balloon value is not find \n. Please, check if balloon node definition is correct.": {
+    "value": "Text node holding the balloon value is not find \n. Please, check if balloon node definition is correct.",
+    "files": [
+      "code/javascript/wiring/DCBalloonObject.js"
+    ]
+  },
+  "Text:": {
+    "value": "Text:",
+    "files": [
+      "code/slidealbum.html"
+    ]
+  },
+  "The first slide represents the printed version of the schematic and shows 'at rest' relay and switch positions highlighted in red. This slide has no animation.": {
+    "value": "The first slide represents the printed version of the schematic and shows 'at rest' relay and switch positions highlighted in red. This slide has no animation.",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "There are no changes to save.": {
+    "value": "There are no changes to save.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "This circuit type might be assigned to wire segments. \n Are you sure you want to delete it?": {
+    "value": "This circuit type might be assigned to wire segments. \n Are you sure you want to delete it?",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "This will delete all of the files in the slide album.\n Are you sure you want to complete this action?": {
+    "value": "This will delete all of the files in the slide album.\n Are you sure you want to complete this action?",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Title": {
+    "value": "Title",
+    "files": [
+      "code/index.html",
+      "code/javascript/index.js"
+    ]
+  },
+  "Title cannot be empty.": {
+    "value": "Title cannot be empty.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Title contains invalid characters. Allowed are letters, digits and the following symbols: \"(\", \"), \"_\", \"-\".": {
+    "value": "Title contains invalid characters. Allowed are letters, digits and the following symbols: \"(\", \"), \"_\", \"-\".",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Title is required.": {
+    "value": "Title is required.",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Title:": {
+    "value": "Title:",
+    "files": [
+      "code/index.html"
+    ]
+  },
+  "Type..": {
+    "value": "Type..",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "Update": {
+    "value": "Update",
+    "files": [
+      "code/index.html",
+      "code/user.html",
+      "code/users.html"
+    ]
+  },
+  "User": {
+    "value": "User",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "User Management": {
+    "value": "User Management",
+    "files": [
+      "code/javascript/helper/navbar.js"
+    ]
+  },
+  "User was successfully updated.": {
+    "value": "User was successfully updated.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Username (Bosch Active Directory ID)": {
+    "value": "Username (Bosch Active Directory ID)",
+    "files": [
+      "code/javascript/login.js"
+    ]
+  },
+  "Username is bisy. Please, choose another one.": {
+    "value": "Username is bisy. Please, choose another one.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Username is required.": {
+    "value": "Username is required.",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/login.js"
+    ]
+  },
+  "Username {_username} is bisy. User cannot be created. Please, choose another username.": {
+    "value": "Username {_username} is bisy. User cannot be created. Please, choose another username.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Username {_username} is bisy. User cannot be edited. Please, choose another username.": {
+    "value": "Username {_username} is bisy. User cannot be edited. Please, choose another username.",
+    "files": [
+      "code/javascript/auth/UsersManager.js"
+    ]
+  },
+  "Username {_username} is bisy. User cannot be created. Please, choose another username.": {
+    "value": "Username {_username} is bisy. User cannot be created. Please, choose another username.",
+    "files": [
+      "code/javascript/authoring/RESTAPIUtil.js"
+    ]
+  },
+  "Username:": {
+    "value": "Username:",
+    "files": [
+      "code/users.html"
+    ]
+  },
+  "View slide album in read-only mode": {
+    "value": "View slide album in read-only mode",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "WARNING! ANIMATION DATA INCONSISTENCY REPORT: \n": {
+    "value": "WARNING! ANIMATION DATA INCONSISTENCY REPORT: \n",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "Warning! This slide album is opened by <b> {_username} </b>. <br> You are viewing it in read-only mode.": {
+    "value": "Warning! This slide album is opened by <b> {_username} </b>. <br> You are viewing it in read-only mode.",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "Wire segment with id <b> {key} </b> of circuit type {type} does not exist in the diagram.": {
+    "value": "Wire segment with id <b> {key} </b> of circuit type {type} does not exist in the diagram.",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "You are not allowed to proceed. Please, change your password first.": {
+    "value": "You are not allowed to proceed. Please, change your password first.",
+    "files": [
+      "code/javascript/user.js"
+    ]
+  },
+  "You have unsaved changes to the slide album.\nAre you sure you want to continue?": {
+    "value": "You have unsaved changes to the slide album.\nAre you sure you want to continue?",
+    "files": [
+      "code/javascript/authoring/SlideAlbum.js"
+    ]
+  },
+  "You have {slideAlbumsCount} slide albums in your workspace": {
+    "value": "You have {slideAlbumsCount} slide albums in your workspace",
+    "files": [
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "Your session is invalid or expired. Please, login again. \n": {
+    "value": "Your session is invalid or expired. Please, login again. \n",
+    "files": [
+      "code/javascript/error.js"
+    ]
+  },
+  "ZOOM: Hold Ctrl key and drag mouse over schematic": {
+    "value": "ZOOM: Hold Ctrl key and drag mouse over schematic",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "[ Initial Slide ]": {
+    "value": "[ Initial Slide ]",
+    "files": [
+      "code/javascript/authoring/AnimationsMgr.js"
+    ]
+  },
+  "[initial Slide]": {
+    "value": "[initial Slide]",
+    "files": [
+      "code/javascript/slidealbum.js"
+    ]
+  },
+  "less": {
+    "value": "less",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "more": {
+    "value": "more",
+    "files": [
+      "code/javascript/authoring/CircuitTypesMgr.js"
+    ]
+  },
+  "selected": {
+    "value": "selected",
+    "files": [
+      "code/javascript/auth/UsersManager.js",
+      "code/javascript/authoring/SlideAlbums.js"
+    ]
+  },
+  "©2016 Bosch Automotive Service Solutions": {
+    "value": "©2016 Bosch Automotive Service Solutions",
+    "files": [
+      "code/accessNotAllowed.html",
+      "code/error.html",
+      "code/index.html",
+      "code/login.html",
+      "code/slidealbum.html",
+      "code/user.html",
+      "code/users.html"
+    ]
+  }
+}

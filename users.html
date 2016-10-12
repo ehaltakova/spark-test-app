@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title data-localize>SALSSA2 User Management</title>
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/bootstrap-multiselect/css/bootstrap-multiselect.css" rel="stylesheet">
+	<link href="lib/datatables/css/jquery.dataTables.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+  
+	<!-- Header Navbar -->
+    
+    <!-- User Notifications Area -->
+	<div class="container">
+		<div id="notificationsArea"></div>
+	</div>
+	
+    <div class="container users-list">
+      <table class="table table-striped display" id="usersTable">
+	    <thead>
+	      <tr>
+	        <th data-localize>User</th>
+	        <th data-localize>Bosch ID</th>
+	        <th data-localize>Edit</th>
+	        <th data-localize>Delete</th>
+	      </tr>
+	    </thead>
+	  </table>
+	  <div>
+	    <button type="button" id="createNewUser" title="Cerate New User" data-toggle="modal" data-target="#createUserDialog" class="btn btn-danger" data-localize><span class='glyphicon glyphicon-new-window'></span> Create User</button>
+	  </div>
+	</div>
+	
+	<!-- Create User Modal Dialog -->
+	<div id="createUserDialog" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title" data-localize>Create User</h4>
+	      </div>
+	      <div class="modal-body">
+	      	  <div id="formErrors"></div>
+		      <form class="form-horizontal" role="form" id="createUserForm">
+			      <div class="form-group">
+				      <label class="control-label col-sm-3" for="username" data-localize>Username:</label>
+				      <div class="col-sm-9">
+				        <input type="text" class="form-control user-name" id="username" placeholder="Bosch Active Directory ID" name="username">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="firstName" data-localize>First Name:</label>
+				      <div class="col-sm-9">          
+				      	<input type="text" class="form-control user-first-name" id="firstName" placeholder="First Name" name="firstName">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="lastName" data-localize>Last Name:</label>
+				      <div class="col-sm-9">          
+				      	<input type="text" class="form-control user-last-name" id="lastName" placeholder="Last Name" name="lastName">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="pass" data-localize>Password:</label>
+				      <div class="col-sm-9">          
+				      	<input type="password" class="form-control user-pass" id="pass" placeholder="Password" name="pass">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="customers" data-localize>Customers:</label>
+				      <div class="col-sm-9">          
+		        		<select id="customersSelect" class="form-control" name="customers" multiple></select>
+				      </div>
+				   </div>
+				   <div class="form-group" style="margin-left:15px;">
+				      <div class="checkbox">
+					    <label class="control-label col-sm-3"><input id="isAdmin" type="checkbox" data-localize><span data-localize>Administrator</span></label>
+				   	  </div>
+				      <div class="col-sm-9">          
+				      </div>
+				   </div>
+			  </form>			  
+			  <button data-target="#createUserDialog" id="createUserBtn" class="btn btn-danger" data-localize>Create</button>	    
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Edit User Modal Dialog -->
+	<div id="editUserDialog" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Edit User</h4>
+	      </div>
+	      <div class="modal-body">
+	      	  <div id="editFormErrors"></div>
+		      <form class="form-horizontal" role="form" id="editUserForm">
+			    <div class="form-group">
+				      <label class="control-label col-sm-3" for="username" data-localize>Username:</label>
+				      <div class="col-sm-9">
+				        <input type="text" class="form-control user-name" id="editUsername" placeholder="Bosch Active Directory ID" name="username">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="firstName" data-localize>First Name:</label>
+				      <div class="col-sm-9">          
+				      	<input type="text" class="form-control user-first-name" id="editFirstName" placeholder="First Name" name="firstName">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="lastName" data-localize>Last Name:</label>
+				      <div class="col-sm-9">          
+				      	<input type="text" class="form-control user-last-name" id="editLastName" placeholder="Last Name" name="lastName">
+				      </div>
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="pass" data-localize>Password:</label>
+				      <div class="col-sm-7">          
+				      	<input type="password" class="form-control user-pass" id="editPass" placeholder="Password" name="pass" disabled>
+				      </div>
+				      <div class="col-sm-2">          
+				      	<button id="resetPassword" class="btn btn-info" data-localize>Reset</button>	
+				      </div>			  
+				    </div>
+				    <div class="form-group">
+				      <label class="control-label col-sm-3" for="customers" data-localize>Customers:</label>
+				      <div class="col-sm-9">          
+		        		<select id="editCustomersSelect" class="form-control" name="customers" multiple></select>
+				      </div>
+				   </div>
+				   <div class="form-group">
+				      <div class="checkbox">
+					    <label class="control-label col-sm-3"><input id="editIsAdmin" type="checkbox" data-localize><div data-localize>Administrator</div></label>
+				   	  </div>
+				      <div class="col-sm-9">          
+				      </div>
+				   </div>
+				   <input type='hidden' id='idToEdit'/>
+			  </form>
+			  <button data-target="#editUserDialog" id="editUser" class="btn btn-danger" data-localize>Update</button>	    
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Footer -->
+	<footer class="footer">
+      <div class="container">
+        <div id="copyright" data-localize>©2016 Bosch Automotive Service Solutions</div>
+      </div>
+    </footer>
+	
+	<script src="locales/en_US/i18n.js"></script>
+	
+	<script src="config/config.js"></script>	
+  	<!-- ref:js scripts/lib.js -->
+  	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/bootbox.min.js"></script>
+	<script src="lib/jquery-placeholders/jquery.placeholder.min.js"></script>
+	<script src="lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+	<script src="lib/datatables/js/jquery.dataTables.min.js"></script>	
+	<!-- endref -->
+	<!-- ref:js scripts/common.js -->
+	<script src="javascript/helper/helper.js"></script>
+	<script src="javascript/helper/layoutHelper.js"></script>
+	<script src="javascript/helper/navbar.js"></script>
+	<script src="javascript/auth/SessionManager.js"></script>
+	<script src="javascript/auth/AuthManager.js"></script>
+	<script src="javascript/auth/UsersManager.js"></script>
+	<!-- endref -->
+	<!-- ref:js users.js -->
+	<script src="javascript/users.js"></script>
+	<!-- endref -->
+	
+	<script>
+		localizeStaticContent();
+	</script>
+	
+  </body>
+</html>
