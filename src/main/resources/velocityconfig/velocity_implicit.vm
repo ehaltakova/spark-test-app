@@ -1,0 +1,3 @@
+#* @implicitly included *#
+#* @vtlvariable name="WebPath" type="com.example.spark.app.Path" *#
+

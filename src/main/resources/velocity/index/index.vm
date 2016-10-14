@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title data-localize>SALSSA2 Home</title>
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/datatables/css/jquery.dataTables.css" rel="stylesheet">
+	<link href="lib/bootstrap-multiselect/css/bootstrap-multiselect.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+	
+	<!-- Header Navbar -->
+	
+	<!-- User Notifications Area -->
+	<div class="container">
+		<div id="notificationsArea"></div>
+	</div>
+	
+	<!-- Slide Albums List -->
+	<div class="container slide-albums">
+	 <div id="slideAlbumsHeader">
+	  	<h3 data-localize>Slide Albums</h3>
+	  </div>
+	  <div id="slideAlbumsCountBadge">
+	  	<h4><span class="label label-info label-as-badge" id="slideAlbumsCount"></span></h4>
+	  </div>
+	  <div id="customerDropDown"></div>
+	  <br>          
+	  <table class="table table-striped display" id="slideAlbumsTable">
+	    <thead>
+	      <tr>
+	        <th data-localize>Title</th>
+	        <th data-localize>Files</th>
+	        <th data-localize>Customer</th>
+	        <th data-localize>Modification Date</th>
+	        <th data-localize>Manage Slides</th>
+	        <th data-localize>Edit Title</th>
+	        <th data-localize>Delete</th>
+	      </tr>
+	    </thead>
+	  </table>
+	  <div>
+	    <button type="button" data-toggle="modal" data-target="#createSADialog" id="createNewBtn" class="btn btn-danger" data-localize><span class="glyphicon glyphicon-new-window"></span> Create New</button>
+	  </div>
+	</div>
+    	
+	<!-- Create Slide Album Modal Dialog -->
+	<div id="createSADialog" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title" data-localize>Create Slide Album</h4>
+	      </div>
+	      <div class="modal-body">
+	      	  <div id="formErrors"></div>
+		      <form class="form-horizontal" role="form" id="createSAForm" enctype='multipart/form-data'>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="title" data-localize>Title:</label>
+			      <div class="col-sm-10">
+			        <input type="text" class="form-control" id="title" placeholder="Title" name="title">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="svgFile" data-localize>SVG File:</label>
+			      <div class="col-sm-10">          
+			        <input id="fileupload" type="file" accept="image/svg+xml" name="files[]">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="customer" data-localize>Customer:</label>   
+			      <div class="col-sm-10">               
+				      <select class="form-control" id="customerSelect" name="customer">
+					  </select>
+				  </div>	
+			    </div>
+			    <input type='hidden' id='selectedFileName' name='selectedFileName'/>
+			    <input type='hidden' id='sessionToken' name='sessionToken'/>
+			  </form>
+			  <button data-target="#createSADialog" id="createBtn" class="btn btn-danger" data-localize>Create</button>	    
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Edit Slide Album Modal Dialog -->
+	<div id="editSADialog" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title" data-localize>Edit Slide Album</h4>
+	      </div>
+	      <div class="modal-body">
+	      	  <div id="editFormErrors"></div>
+		      <form class="form-horizontal" role="form" id="editSAForm">
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="title" data-localize>Title:</label>
+			      <div class="col-sm-10">
+			        <input type="text" class="form-control" id="editTitle" placeholder="Title" name="title">
+			      </div>
+			    </div>
+			    <div class="form-group">
+			      <label class="control-label col-sm-2" for="fileName" data-localize>Filename:</label>
+			      <div class="col-sm-10">
+			        <input type="text" class="form-control" id="editFilename" placeholder="File Name" name="fileName">
+			      </div>
+			    </div>
+			    <div class="form-group">
+				    <label class="control-label col-sm-2" for="svgFile" data-localize>SVG File:</label>
+					<div class="col-sm-10" style="padding-top:7px">   
+						<span id="uploadLink"></span>
+						<input type="file" id="editFileupload" accept="image/svg+xml"/>
+					</div>
+				</div>
+			    <input type='hidden' id='editSelectedFileName' name='submitValue'/>
+			    <input type='hidden' id='oldTitle' name='oldTitle'/>
+			    <input type='hidden' id='oldFilename' name='oldFilename'/>
+			    <input type='hidden' id='hasFileContentChange' name='hasFileContentChange'/>
+			    <input type='hidden' id='customer' name='customer'/>
+			  </form>
+			  <button data-target="#editSADialog" id="editBtn" class="btn btn-danger" data-localize>Update</button>	    
+	      </div>
+	    </div>
+	  </div>
+	</div>
+		
+	<!-- Footer -->
+	<footer class="footer">
+      <div class="container">
+        <div id="copyright" data-localize>©2016 Bosch Automotive Service Solutions</div>
+      </div>
+    </footer>
+    
+
+#[[
+    <script src="locales/en_US/i18n.js"></script>
+
+	<script src="config/config.js"></script>
+	<!-- ref:js scripts/lib.js -->
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="lib/jquery-placeholders/jquery.placeholder.min.js"></script>
+	<script src="lib/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+	<script src="lib/fileupload/jquery.ui.widget.js"></script>
+	<script src="lib/fileupload/jquery.iframe-transport.js"></script>
+	<script src="lib/fileupload/jquery.fileupload.js"></script>
+	<script src="lib/bootbox.min.js"></script>
+	<!-- endref--> 
+	<!-- ref:js scripts/common.js -->
+	<script src="javascript/helper/helper.js"></script>
+	<script src="javascript/helper/layoutHelper.js"></script>
+	<script src="javascript/helper/navbar.js"></script>
+	<script src="javascript/auth/SessionManager.js"></script>
+	<script src="javascript/auth/AuthManager.js"></script>
+	<!-- endref--> 
+	<!-- ref:js scripts/authoring.js -->
+	<script src="javascript/authoring/RESTAPIUtil.js"></script>
+	<script src="javascript/authoring/SlideAlbums.js"></script>
+	<!-- endref--> 	
+	<!-- ref:js index.js -->
+	<script src="javascript/index.js"></script>
+	<!-- endref--> 
+	
+	<script>
+		localizeStaticContent();
+	</script>
+]]#
