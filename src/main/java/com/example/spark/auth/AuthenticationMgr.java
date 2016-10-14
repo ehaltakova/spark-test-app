@@ -11,17 +11,17 @@ import com.example.spark.util.HTTPUtil.HTTPResponse;
 public class AuthenticationMgr {
 
 	public HTTPResponse login(String requestBody) {
-		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.LOGIN, requestBody);
+		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.AUTH_API_MAIN_URL, AuthAPIPath.LOGIN, requestBody);
 		return response;
 	}
 	
 	public HTTPResponse logout(String requestBody) {
-		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.LOGOUT, requestBody);
+		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.AUTH_API_MAIN_URL, AuthAPIPath.LOGOUT, requestBody);
 		return response;
 	}
 	
 	public HTTPResponse validateSessionToken(String requestBody) {
-		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.VALIDATE_REQUEST, requestBody);
+		HTTPResponse response = HTTPUtil.postRequest(AuthAPIPath.AUTH_API_MAIN_URL, AuthAPIPath.VALIDATE_REQUEST, requestBody);
 		return response;
 	}
 	
@@ -39,11 +39,11 @@ public class AuthenticationMgr {
 	
 	private static class AuthAPIPath {
 
-		private static final String AUTH_API_MAIN_URL = "http://localhost:1818/SALSSA2-API/api/auth";
+		public static final String AUTH_API_MAIN_URL = "http://localhost:1818/SALSSA2-API/api/auth";
 		
-		public static final String LOGIN = AUTH_API_MAIN_URL + "/login";
-		public static final String LOGOUT = AUTH_API_MAIN_URL + "/logout";
-		public static final String VALIDATE_REQUEST = AUTH_API_MAIN_URL + "/validateToken";
+		public static final String LOGIN = "/login";
+		public static final String LOGOUT = "/logout";
+		public static final String VALIDATE_REQUEST = "/validateToken";
 				
 	}
 }

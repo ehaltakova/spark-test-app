@@ -1,0 +1,19 @@
+#macro(navbar)
+#set ($homeURL = $WebPath.getAppBaseUrl() + $WebPath.getIndex())
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header pull-left">
+			<a class="navbar-brand" href="$homeURL">SALSSA2</a> 
+		</div> 
+		<div class="navbar-header pull-right">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="$homeURL" style="margin:0px 0px 0px 20px;padding:0px;">
+						<img style="height:50px;" src="images/bosch-logo.jpg">
+					</a>
+				</li> 			
+			</ul>
+		</div>
+	</div>
+</nav>
+#end

@@ -85,7 +85,7 @@ public class SlideAlbumsMgrIntTest {
 	@Test 
 	public void createSlideAlbumMultiPartRequestTest() {
 		
-		String url = "http://localhost:6789" + Path.CREATE_SLIDEALBUM;
+		String url = Path.APP_BASE_URL + Path.AJAX_CREATE_SLIDEALBUM;
 		String svg = "Anti-lock Brake System (ABS)_01.svg";
 		String fileName = FilenameUtils.getBaseName(svg);
 		String title = "Test Multipart Request";
@@ -130,7 +130,7 @@ public class SlideAlbumsMgrIntTest {
 	@Test 
 	public void createSlideAlbumBadRequestTest() {
 		
-		String url = "http://localhost:6789" + Path.CREATE_SLIDEALBUM;
+		String url = Path.APP_BASE_URL + Path.AJAX_CREATE_SLIDEALBUM;
 		String svg = "Anti-lock Brake System (ABS)_01.svg";
 		String customer = "Fake customer"; // non-existing customer
 		String sessionToken = "test123";
@@ -159,7 +159,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customers", Arrays.asList("Bosch"));
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.GET_SLIDEALBUMS, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_GET_SLIDEALBUMS, json);
 		assertEquals(200, response.status); 		
 		String body = response.body;
 		JsonObject jobj = JsonUtil.fromJsonToClass(body, JsonObject.class);
@@ -188,7 +188,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customers", Arrays.asList("Fake customer")); // there is no such customer folder
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.GET_SLIDEALBUMS, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_GET_SLIDEALBUMS, json);
 		assertEquals(200, response.status); 
 		String body = response.body;
 		assertNotNull(body); 
@@ -208,7 +208,7 @@ public class SlideAlbumsMgrIntTest {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("customers", Arrays.asList("Bosch"));
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.GET_SLIDEALBUMS, json); // request has no sessiontoken infor
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_GET_SLIDEALBUMS, json); // request has no sessiontoken infor
 		assertEquals(401, response.status); // no/invalid session token is passed, so request is unauthorized
 		String body = response.body;
 		assertNotNull(body); // error message
@@ -219,7 +219,7 @@ public class SlideAlbumsMgrIntTest {
 		String title = "Eli Test 123";
 		String customer = "Bosch";
 		String svg = "Central Locking_01";
-		String url = HTTPUtil.constructURL("http", "localhost", 6789, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		assertEquals(200, response.status); 
 		String body = response.body;
@@ -235,7 +235,7 @@ public class SlideAlbumsMgrIntTest {
 	public void getUnexistingSlideAlbumTest() {	
 		String title = "I don't exist"; // request slide album with title that does not exst
 		String customer = "Bosch";
-		String url = HTTPUtil.constructURL("http", "localhost", 6789, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		System.out.println(response.body);
 		assertEquals(400, response.status); 
@@ -247,7 +247,7 @@ public class SlideAlbumsMgrIntTest {
 	public void getUnexistingSlideAlbum2Test() {	
 		String title = "I don't exist";
 		String customer = "Fake customer"; // request slide album with customer that does not exst
-		String url = HTTPUtil.constructURL("http", "localhost", 6789, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		System.out.println(response.body);
 		assertEquals(400, response.status); 
@@ -266,7 +266,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customer", customer);
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.DELETE_SLIDEALBUM, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_DELETE_SLIDEALBUM, json);
 		assertEquals(200, response.status); 		
 		String body = response.body;
 		JsonObject jobj = JsonUtil.fromJsonToClass(body, JsonObject.class);
@@ -285,7 +285,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customer", customer);
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.DELETE_SLIDEALBUM, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_DELETE_SLIDEALBUM, json);
 		assertEquals(400, response.status); 		
 		String body = response.body;
 		assertNotNull(body); // error message
@@ -300,7 +300,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customer", customer);
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.DELETE_SLIDEALBUM, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_DELETE_SLIDEALBUM, json);
 		assertEquals(500, response.status); 		
 		String body = response.body;
 		assertNotNull(body); // error message
@@ -313,7 +313,7 @@ public class SlideAlbumsMgrIntTest {
 		data.put("customer", "Bosch");
 		data.put("sessionToken", "exampleSessionTokenHere");
 		String json = JsonUtil.toJson(data);
-		HTTPResponse response = HTTPUtil.postRequest(Path.DELETE_SLIDEALBUM, json);
+		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_DELETE_SLIDEALBUM, json);
 		assertEquals(400, response.status); 		
 		String body = response.body;
 		assertNotNull(body); // error message

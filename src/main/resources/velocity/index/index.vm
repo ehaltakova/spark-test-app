@@ -1,3 +1,6 @@
+#parse("/velocity/navbar.vm")
+#parse("/velocity/footer.vm")
+#parse("/velocity/notificationsArea.vm")
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,11 +16,12 @@
   <body>
 	
 	<!-- Header Navbar -->
+	#@navbar()
+	#end
 	
 	<!-- User Notifications Area -->
-	<div class="container">
-		<div id="notificationsArea"></div>
-	</div>
+	#@notificationsArea()
+	#end
 	
 	<!-- Slide Albums List -->
 	<div class="container slide-albums">
@@ -129,18 +133,12 @@
 	</div>
 		
 	<!-- Footer -->
-	<footer class="footer">
-      <div class="container">
-        <div id="copyright" data-localize>©2016 Bosch Automotive Service Solutions</div>
-      </div>
-    </footer>
+	#@footer()
+	#end
     
-
 #[[
     <script src="locales/en_US/i18n.js"></script>
-
 	<script src="config/config.js"></script>
-	<!-- ref:js scripts/lib.js -->
 	<script src="lib/jquery/jquery.min.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/jquery-placeholders/jquery.placeholder.min.js"></script>
@@ -150,23 +148,33 @@
 	<script src="lib/fileupload/jquery.iframe-transport.js"></script>
 	<script src="lib/fileupload/jquery.fileupload.js"></script>
 	<script src="lib/bootbox.min.js"></script>
-	<!-- endref--> 
-	<!-- ref:js scripts/common.js -->
 	<script src="javascript/helper/helper.js"></script>
 	<script src="javascript/helper/layoutHelper.js"></script>
 	<script src="javascript/helper/navbar.js"></script>
 	<script src="javascript/auth/SessionManager.js"></script>
 	<script src="javascript/auth/AuthManager.js"></script>
-	<!-- endref--> 
-	<!-- ref:js scripts/authoring.js -->
 	<script src="javascript/authoring/RESTAPIUtil.js"></script>
 	<script src="javascript/authoring/SlideAlbums.js"></script>
-	<!-- endref--> 	
-	<!-- ref:js index.js -->
-	<script src="javascript/index.js"></script>
-	<!-- endref--> 
 	
 	<script>
 		localizeStaticContent();
+	</script>
+	
+	<script>
+		$( document ).ready(function() {	
+			// placeholders localization
+			$("#title").attr("placeholder", localize("Title"));
+			$("#editTitle").attr("placeholder", localize("Title"));
+			$("#editFilename").attr("placeholder", localize("File Name"));
+			
+			// show placehodlers in IE9
+			$(function() {
+				$('input, text').placeholder();
+			});
+					
+			// load and display slide albums
+			var slideAlbumsMgr = new SlideAlbumsManager();
+			slideAlbumsMgr.getSlideAlbums();
+		});
 	</script>
 ]]#

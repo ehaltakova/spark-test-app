@@ -23,7 +23,7 @@ var APP_BASE_URL = config['app_base_url'];
     	AuthManager.prototype.login = function (username, pass) {  	
     		
     		var sessionMgr = this.sessionMgr;		  		
-    		var url = API_BASE_URL + '/api/auth/login';
+    		var url = "http://localhost:6789/login";
     		var type = 'POST';	 
     		var data = {'username': username, 'password': pass}; // request data
     		var loginCallback = function(resp) { //login success callback
@@ -38,7 +38,7 @@ var APP_BASE_URL = config['app_base_url'];
 					'sessionToken': resp['sessionToken']
 				};
 				sessionMgr.setUserContext(usrData); // set user context
-				window.location.href = APP_BASE_URL; // redirect to home page
+				window.location.href = "http://localhost:6789/index"; // redirect to home page
     		};	
     		
     		// call login WS
@@ -47,16 +47,19 @@ var APP_BASE_URL = config['app_base_url'];
     			contentType: "application/x-www-form-urlencoded",
     			url: url,     
     			async: true,
+    			beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', '*');},
     			data: JSON.stringify(data),
     			success: function(response) {
+    				console.log(response);
         			loginCallback(response);
     			},
     			error: function(response) {
+    				console.log(response);
     				var errorMsg = response.status + " " + response.statusText + ": " + localize("An internal error occured. Please contact your system administrator.");
     	        	if(response.status == 401) {
     	        		errorMsg = response.status + " " + response.statusText + ": " + localize("Invalid credentials. Please, try again.");
     	        	} else if(response.status == 403) {
-    	        		window.location.href = APP_BASE_URL + "/error";
+    	        		window.location.href = "http://localhost:6789/error";
     				}
     	        	displayUserNotification('danger', [errorMsg]);
     			},

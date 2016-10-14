@@ -12,6 +12,14 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 public class ViewUtil {
 	public static String render(Request request, Map<String, Object> model, String templatePath) {
+		if(model.get("msg") == null) {
+			model.put("msg", "");
+		}
+		if(request.session().attribute("userContext") == null) {
+			model.put("authenticated", false);
+		}else {
+			model.put("authenticated", true);
+		}
         model.put("WebPath", Path.class); // Access application URLs from templates
         return getVelocityTemplateEngine().render(new ModelAndView(model, templatePath));
     }
