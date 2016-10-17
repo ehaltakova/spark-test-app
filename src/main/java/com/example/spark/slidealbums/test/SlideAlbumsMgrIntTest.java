@@ -18,9 +18,9 @@ import com.example.spark.app.Application;
 import com.example.spark.app.Path;
 import com.example.spark.slidealbums.SlideAlbum;
 import com.example.spark.slidealbums.SlideAlbumsMgr;
+import com.example.spark.util.ConfigUtil;
 import com.example.spark.util.HTTPUtil;
 import com.example.spark.util.JsonUtil;
-import com.example.spark.util.Util;
 import com.example.spark.util.HTTPUtil.HTTPResponse;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -55,7 +55,7 @@ public class SlideAlbumsMgrIntTest {
 		// prepare for the request - upload svg file to the upload directory
 		String svg = "Electronic Control Module (ECM)_01.svg";
 		File source = new File("src/test/resources/" + svg);
-		File dest = new File(Util.uploadDirPath + "/" + svg);
+		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
@@ -92,7 +92,7 @@ public class SlideAlbumsMgrIntTest {
 		String customer = "Bosch";
 		String sessionToken = "test123";
 		File source = new File("src/test/resources/" + svg);
-		File dest = new File(Util.uploadDirPath + "/" + svg);
+		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
@@ -135,7 +135,7 @@ public class SlideAlbumsMgrIntTest {
 		String customer = "Fake customer"; // non-existing customer
 		String sessionToken = "test123";
 		File source = new File("src/test/resources/" + svg);
-		File dest = new File(Util.uploadDirPath + "/" + svg);
+		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {
@@ -219,7 +219,7 @@ public class SlideAlbumsMgrIntTest {
 		String title = "Eli Test 123";
 		String customer = "Bosch";
 		String svg = "Central Locking_01";
-		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", ConfigUtil.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		assertEquals(200, response.status); 
 		String body = response.body;
@@ -235,7 +235,7 @@ public class SlideAlbumsMgrIntTest {
 	public void getUnexistingSlideAlbumTest() {	
 		String title = "I don't exist"; // request slide album with title that does not exst
 		String customer = "Bosch";
-		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", ConfigUtil.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		System.out.println(response.body);
 		assertEquals(400, response.status); 
@@ -247,7 +247,7 @@ public class SlideAlbumsMgrIntTest {
 	public void getUnexistingSlideAlbum2Test() {	
 		String title = "I don't exist";
 		String customer = "Fake customer"; // request slide album with customer that does not exst
-		String url = HTTPUtil.constructURL("http", "localhost", Path.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
+		String url = HTTPUtil.constructURL("http", "localhost", ConfigUtil.PORT, "/spark/api/test/slidealbum/" + customer + "/" + title);
 		HTTPResponse response = HTTPUtil.getRequest(url);
 		System.out.println(response.body);
 		assertEquals(400, response.status); 
@@ -328,7 +328,7 @@ public class SlideAlbumsMgrIntTest {
 	// helper method
 	private static void createSlideAlbum(String title, String customer, String svg) {
 		File source = new File("src/test/resources/" + svg);
-		File dest = new File(Util.uploadDirPath + "/" + svg);
+		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
 			FileUtils.copyFile(source, dest);
 		} catch (IOException e) {

@@ -25,7 +25,7 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 /**
- * Utility class providing features for execuing POST and GET requests 
+ * Utility class providing features for executing POST and GET requests.
  * @author Elitza Haltakova
  *
  */
@@ -51,24 +51,6 @@ public class HTTPUtil {
 			}
 			String responseText = result.toString();
 			return new HTTPResponse(response.getStatusLine().getStatusCode(), responseText);
-		} catch (IOException e) {
-			e.printStackTrace();
-			fail("Sending request failed: " + e.getMessage());
-			return null;
-		}
-	}
-	
-	public static HttpResponse post(String baseUrl, String path, String requestBody) {
-		try {
-			String url = baseUrl + path;
-			HttpClient client =  HttpClientBuilder.create().build();
-			HttpPost post = new HttpPost(url);
-			post.setHeader("Content-Type", "application/x-www-form-urlencoded"); 
-			post.setHeader("charset", "utf-8");
-			StringEntity body = new StringEntity(requestBody);
-			post.setEntity(body);
-			HttpResponse response = client.execute(post);
-			return response;
 		} catch (IOException e) {
 			e.printStackTrace();
 			fail("Sending request failed: " + e.getMessage());

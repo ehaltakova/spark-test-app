@@ -12,8 +12,8 @@ import org.apache.log4j.Logger;
 import com.example.spark.app.Application;
 import com.example.spark.app.ResponseError;
 import com.example.spark.auth.AuthenticationMgr;
+import com.example.spark.util.ConfigUtil;
 import com.example.spark.util.JsonUtil;
-import com.example.spark.util.Util;
 
 import spark.*;
 
@@ -48,7 +48,7 @@ public class SlideAlbumsController {
 		logger.debug(request.pathInfo() + "  Create Slidealbum");
 		logger.debug(request.body());
 		
-		File uploadDir = new File(Util.uploadDirPath);
+		File uploadDir = new File(ConfigUtil.UPLOAD_DIR);
 		// apache commons-fileupload to handle file upload with multi part request
 		DiskFileItemFactory factory = new DiskFileItemFactory();
 		factory.setRepository(uploadDir);

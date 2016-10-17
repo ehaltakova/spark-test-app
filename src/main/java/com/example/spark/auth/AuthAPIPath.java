@@ -1,5 +1,10 @@
 package com.example.spark.auth;
 
+/**
+ * External Authentication API end points paths.
+ * @author Elitza Haltakova
+ *
+ */
 public class AuthAPIPath {
 
 	private static final String AUTH_API_MAIN_URL = "http://localhost:1818/SALSSA2-API/api/auth";

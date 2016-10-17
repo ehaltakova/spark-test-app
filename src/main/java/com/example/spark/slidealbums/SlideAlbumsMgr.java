@@ -11,7 +11,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
 import com.example.spark.slidealbums.SlideAlbum.Builder;
-import com.example.spark.util.Util;
+import com.example.spark.util.ConfigUtil;
 
 /**
  * Slide Albums Manager class handling retrieval and CRUD of slide albums.
@@ -21,7 +21,7 @@ import com.example.spark.util.Util;
 public class SlideAlbumsMgr {
 
 	final static Logger logger = Logger.getLogger(SlideAlbumsMgr.class); 
-	final static String workspacesDir = "D:/xampp-7/htdocs/workspaces";
+	final static String workspacesDir = ConfigUtil.WORKSPACES_DIR;
 	
 	public SlideAlbumsMgr() {
 	}
@@ -94,7 +94,7 @@ public class SlideAlbumsMgr {
 		}
 		File slideAlbumDir = new File(workspacesDir + "/" + customer + "/" + title);
 		slideAlbumDir.mkdir();
-		File file = new File(Util.uploadDirPath + "/" + fileName);
+		File file = new File(ConfigUtil.UPLOAD_DIR + "/" + fileName);
 		file.renameTo(new File(slideAlbumDir.getPath() + "/" + fileName));
 		SlideAlbum.Builder builder = new Builder(title, customer).modificationDate(slideAlbumDir.lastModified()).svg(FilenameUtils.getBaseName(fileName));
 		List<SlideAlbumFile> files = new ArrayList<SlideAlbumFile>(); 

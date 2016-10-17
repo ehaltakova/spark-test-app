@@ -9,5 +9,6 @@
 #* @vtlvariable name="shouldChangePassword" type="Java.lang.Boolean" *#
 #* @vtlvariable name="customers" type="Java.util.List" *#
 #* @vtlvariable name="sessionToken" type="Java.util.String" *#
+#* @vtlvariable name="links" type="Java.util.Map" *#
 
 

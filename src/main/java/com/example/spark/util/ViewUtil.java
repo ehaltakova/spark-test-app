@@ -10,17 +10,23 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.template.velocity.VelocityTemplateEngine;
 
+/**
+ * Velocity Template Engine Util class.
+ * @author Elitza Haltakova
+ *
+ */
 public class ViewUtil {
+	
 	public static String render(Request request, Map<String, Object> model, String templatePath) {
-		if(model.get("msg") == null) {
+		if(model.get("msg") == null) { // user notification message
 			model.put("msg", "");
 		}
-		if(request.session().attribute("userContext") == null) {
+		if(request.session().attribute("userContext") == null) { // sessionmgr: isSetUserContext
 			model.put("authenticated", false);
 		}else {
 			model.put("authenticated", true);
 		}
-        model.put("WebPath", Path.class); // Access application URLs from templates
+        model.put("WebPath", Path.class); // application URLs
         return getVelocityTemplateEngine().render(new ModelAndView(model, templatePath));
     }
 	

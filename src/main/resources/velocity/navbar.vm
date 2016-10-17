@@ -3,6 +3,14 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header pull-left">
+			#if($authenticated)
+				<button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#salssaNavbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+				</button>
+			#end
 			<a class="navbar-brand" href="$homeURL">SALSSA2</a> 
 		</div> 
 		<div class="navbar-header pull-right">
@@ -14,6 +22,21 @@
 				</li> 			
 			</ul>
 		</div>
+		#if($authenticated)
+			#set ($userPageUrl = "/user/" + $username)
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a id="homePageRef" href="$homeURL">Home<span class="sr-only">(current)</span></a></li>
+					 #foreach($key in $links.keySet())
+			            <li><a href="$links.get($key)">$key</a></li>
+			        #end
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="$userPageUrl">$firstname $lastname</a></li>
+					<li><a href="$WebPath.getLogout()">Logout</a></li>
+				</ul>
+			</div>
+		#end
 	</div>
 </nav>
 #end

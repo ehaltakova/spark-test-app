@@ -1,11 +1,13 @@
 package com.example.spark.app;
 
 import static spark.Spark.*;
+import static spark.debug.DebugScreen.*;
 
 import com.example.spark.index.IndexController;
 import com.example.spark.login.LoginController;
 import com.example.spark.slidealbums.SlideAlbumsController;
 import com.example.spark.util.CORSUtil;
+import com.example.spark.util.ConfigUtil;
 import com.example.spark.util.Util;
 
 import org.apache.log4j.Logger;
@@ -20,16 +22,21 @@ public class Application {
 	
 	public static void main(String[] args) {
 		
-		port(Path.PORT);
+		// configure port and static resource files directory
+		port(ConfigUtil.PORT);
 		staticFiles.location("/public");
 		staticFiles.expireTime(600L);
 		
-		// configure static resources folder (used to store uploaded files)
-		Util.configureUploadFilesDir();
+		// enable debug screen if application is in DEV mode
+		if(ConfigUtil.appMode.equals("DEV")) {
+			enableDebugScreen();
+		}
+		
+		// set up upload folder
+		Util.setUpUploadDir();
 		
 		// enable CORS
 		CORSUtil.enableCORS();
-		System.out.println(Path.APP_BASE_URL);
 
 		// set up before and after filters
 		before("/spark/api/public/*", Filters.ensureSessionTokenIsValid);
@@ -37,13 +44,14 @@ public class Application {
 		after("/spark/api/public/*", Filters.regenerateSessionToken);
 		after(Filters.logResponse);
 		
-		// register exception handling
+		// register exception handlers
 		exception(Exception.class, ExceptionHandlers.uncheckedExceptions);
 		
 		// routes
 		get(Path.INDEX, IndexController.serveIndexPage);
 		get(Path.LOGIN, LoginController.serveLoginPage);
 		post(Path.LOGIN, LoginController.handleLogin);
+		get(Path.LOGOUT, LoginController.handleLogout);
 		// ajax
 		post(Path.AJAX_GET_SLIDEALBUMS, SlideAlbumsController.getSlideAlbums);		
 		post(Path.AJAX_CREATE_SLIDEALBUM, SlideAlbumsController.createSlideAlbum);

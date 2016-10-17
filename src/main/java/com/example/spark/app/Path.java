@@ -1,15 +1,24 @@
 package com.example.spark.app;
 
+import com.example.spark.util.ConfigUtil;
+
+/**
+ * Application routes and API end points.
+ * @author Elitza Haltakova
+ *
+ */
 public class Path {
 
-	private static final String HOST = "http://localhost";
-	public static final int PORT = 6789;
-	private static final String APP_NAME = "";
-	public static final String APP_BASE_URL = APP_NAME.equals("") ? HOST + ":" + PORT : HOST + ":" + PORT + "/" + APP_NAME;
+	public static final String APP_BASE_URL = ConfigUtil.APP_NAME.equals("") ? ConfigUtil.HOST + ":" + ConfigUtil.PORT : ConfigUtil.HOST + ":" + ConfigUtil.PORT + "/" + ConfigUtil.APP_NAME;
 		
+	// application urls
 	public static final String INDEX = "/index";
 	public static final String LOGIN = "/login";
+	public static final String USERS = "/users";
+	public static final String USER = "/user/";
+	public static final String LOGOUT = "/logout";
 	
+	// api end points
 	private static final String API = "/spark/api";
 	public static final String AJAX_GET_SLIDEALBUMS = API + "/public/slidealbums";
 	public static final String AJAX_DELETE_SLIDEALBUM = API + "/public/slidealbums/delete";
@@ -28,6 +37,19 @@ public class Path {
 		return LOGIN;
 	}
 	
+	public static String getUsers() {
+		return USERS;
+	}
+
+	public static String getUser() {
+		return USER;
+	}
+
+	public static String getLogout() {
+		return LOGOUT;
+	}
+	
+	// template files paths
 	public static class Template {
         public final static String INDEX = "/velocity/index/index.vm";
         public final static String LOGIN = "/velocity/login/login.vm";

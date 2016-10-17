@@ -8,13 +8,10 @@ import java.io.File;
  *
  */
 public class Util {
-
-	public static String uploadDirPath = "upload";
 			
-	public static File configureUploadFilesDir() {
-		File uploadDir = new File("upload");
+	public static File setUpUploadDir() {
+		File uploadDir = new File(ConfigUtil.UPLOAD_DIR);
 	    uploadDir.mkdir(); // create the upload directory if it doesn't exist
-	    uploadDirPath = uploadDir.getPath();
 	    return uploadDir;
 	}
 }

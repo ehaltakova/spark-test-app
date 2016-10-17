@@ -4,7 +4,8 @@ import com.example.spark.util.HTTPUtil;
 import com.example.spark.util.HTTPUtil.HTTPResponse;
 
 /**
- * Authentication Manager - calls web services of the Authentication API
+ * Authentication Manager class.
+ * Calls web services of the external Authentication API.
  * @author Elitza Haltakova
  *
  */
