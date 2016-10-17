@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.example.spark.app.Path;
-import com.example.spark.util.JsonUtil;
+import com.example.spark.auth.SessionManager;
+import com.example.spark.auth.UserContext;
 import com.example.spark.util.ViewUtil;
 
 import spark.Request;
@@ -20,14 +21,13 @@ public class IndexController {
 
 	public static Route serveIndexPage = (Request request, Response response) -> {
 		Map<String, Object> model = new HashMap<>();
-		if(request.session().attribute("userContext") == null) { // sessionMgr: isUserContext set
+		if(!SessionManager.isUserContextSet(request)) {
 			response.redirect(Path.LOGIN);
-		} else {
-			model = JsonUtil.fromJson(request.session().attribute("userContext")); // sessionMgr: get user context
 		}
-		HashMap<String, String> links = new HashMap<String, String>(); //TODO: check if user is admin
-		links.put("User Management", "/users");
+		HashMap<String, String> links = new HashMap<String, String>();
 		model.put("links", links);
+		UserContext usrContext =  request.session().attribute("userContext");
+		response.header("Set-Cookie", "userContext=" + usrContext);  // to be able to access the user context on the client side
 		return ViewUtil.render(request, model, Path.Template.INDEX);
 	};
 }

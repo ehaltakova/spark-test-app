@@ -31,7 +31,15 @@
 	  <div id="slideAlbumsCountBadge">
 	  	<h4><span class="label label-info label-as-badge" id="slideAlbumsCount"></span></h4>
 	  </div>
-	  <div id="customerDropDown"></div>
+	  <div id="customerDropDown">
+ 		#if($userContext.getUser().getCustomers().size() > 1)
+	  		<select id="selectCustomer" multiple="multiple" style="display: none;">
+	  			#foreach($customer in $userContext.getUser().getCustomers())
+	  				<option value="$customer" selected="">$customer</option>
+	  			#end
+	  		</select>
+	  	#end	  
+	  </div>
 	  <br>          
 	  <table class="table table-striped display" id="slideAlbumsTable">
 	    <thead>
@@ -78,6 +86,9 @@
 			      <label class="control-label col-sm-2" for="customer" data-localize>Customer:</label>   
 			      <div class="col-sm-10">               
 				      <select class="form-control" id="customerSelect" name="customer">
+				      #foreach($customer in $userContext.getUser().getCustomers())
+				      	<option value="$customer">$customer</option> 
+				      #end
 					  </select>
 				  </div>	
 			    </div>
@@ -150,8 +161,6 @@
 	<script src="lib/bootbox.min.js"></script>
 	<script src="javascript/helper/helper.js"></script>
 	<script src="javascript/helper/layoutHelper.js"></script>
-	<script src="javascript/auth/SessionManager.js"></script>
-	<script src="javascript/auth/AuthManager.js"></script>
 	<script src="javascript/authoring/RESTAPIUtil.js"></script>
 	<script src="javascript/authoring/SlideAlbums.js"></script>
 	
@@ -170,7 +179,7 @@
 			$(function() {
 				$('input, text').placeholder();
 			});
-					
+								
 			// load and display slide albums
 			var slideAlbumsMgr = new SlideAlbumsManager();
 			slideAlbumsMgr.getSlideAlbums();

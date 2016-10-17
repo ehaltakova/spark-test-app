@@ -1,7 +1,11 @@
 package com.example.spark.auth;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.example.spark.util.HTTPUtil;
 import com.example.spark.util.HTTPUtil.HTTPResponse;
+import com.example.spark.util.JsonUtil;
 
 /**
  * Authentication Manager class.
@@ -27,15 +31,15 @@ public class AuthenticationMgr {
 	}
 	
 	public boolean isSessionTokenValid(String sessionToken) {
-		if(sessionToken != null && !sessionToken.equals("")) {
+		AuthenticationMgr authMgr = new AuthenticationMgr();
+		Map<String, Object> requestData = new HashMap<String, Object>();
+		requestData.put("sessionToken", sessionToken);
+		String requestBody = JsonUtil.toJson(requestData);
+		HTTPResponse response = authMgr.validateSessionToken(requestBody);
+		if(response.status == 200) {
 			return true;
 		}
 		return false;
-	}
-	
-	// TODO
-	public String regenerateSessionToken(String oldSessionToken) {
-		return oldSessionToken;
 	}
 	
 	private static class AuthAPIPath {
@@ -45,6 +49,5 @@ public class AuthenticationMgr {
 		public static final String LOGIN = "/login";
 		public static final String LOGOUT = "/logout";
 		public static final String VALIDATE_REQUEST = "/validateToken";
-				
 	}
 }

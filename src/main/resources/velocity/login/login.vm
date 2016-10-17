@@ -48,9 +48,7 @@
 	<script src="lib/jquery-placeholders/jquery.placeholder.min.js"></script>
 	<script src="javascript/helper/helper.js"></script>
 	<script src="javascript/helper/layoutHelper.js"></script>
-	<script src="javascript/auth/SessionManager.js"></script>
-	<script src="javascript/auth/AuthManager.js"></script>
-	
+		
 	<script>
 		localizeStaticContent();
 	</script>

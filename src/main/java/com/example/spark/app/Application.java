@@ -28,7 +28,7 @@ public class Application {
 		staticFiles.expireTime(600L);
 		
 		// enable debug screen if application is in DEV mode
-		if(ConfigUtil.appMode.equals("DEV")) {
+		if(ConfigUtil.appMode.name().equals("DEV")) {
 			enableDebugScreen();
 		}
 		
@@ -39,9 +39,8 @@ public class Application {
 		CORSUtil.enableCORS();
 
 		// set up before and after filters
-		before("/spark/api/public/*", Filters.ensureSessionTokenIsValid);
+		before("/spark/api/*", Filters.ensureSessionTokenIsValid);
 		before(Filters.addResponseHeaders);
-		after("/spark/api/public/*", Filters.regenerateSessionToken);
 		after(Filters.logResponse);
 		
 		// register exception handlers
@@ -57,7 +56,7 @@ public class Application {
 		post(Path.AJAX_CREATE_SLIDEALBUM, SlideAlbumsController.createSlideAlbum);
 		post(Path.AJAX_DELETE_SLIDEALBUM, SlideAlbumsController.deleteSlideAlbum);		
 		// tests
-		get("/spark/api/test/slidealbum/*/*", SlideAlbumsController.getSlideAlbum);		
+		get("/spark/test/slidealbum/*/*", SlideAlbumsController.getSlideAlbum);		
 		get("/hello", (req, res) -> "Hello World");
 	}	
 }

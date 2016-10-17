@@ -37,8 +37,12 @@ public class JsonUtil {
 		return data;
 	}
 	
+	public static <T> T fromJsonElementToType(JsonElement json, Type objType) {
+		T data = new Gson().fromJson(json, objType);
+		return data;
+	}
+	
 	public static String toJson(Object data) {
 		return new Gson().toJson(data);
 	}
-
 }

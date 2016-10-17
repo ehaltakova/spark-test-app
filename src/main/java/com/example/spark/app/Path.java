@@ -20,8 +20,8 @@ public class Path {
 	
 	// api end points
 	private static final String API = "/spark/api";
-	public static final String AJAX_GET_SLIDEALBUMS = API + "/public/slidealbums";
-	public static final String AJAX_DELETE_SLIDEALBUM = API + "/public/slidealbums/delete";
+	public static final String AJAX_GET_SLIDEALBUMS = API + "/slidealbums";
+	public static final String AJAX_DELETE_SLIDEALBUM = API + "/slidealbums/delete";
 	public static final String AJAX_CREATE_SLIDEALBUM = API + "/slidealbums/create";
 	public static final String AJAX_GET_SLIDEALBUM = API + "test/slidealbum/*/*";
 

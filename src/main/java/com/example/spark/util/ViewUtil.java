@@ -5,6 +5,8 @@ import java.util.Map;
 import org.apache.velocity.app.VelocityEngine;
 
 import com.example.spark.app.Path;
+import com.example.spark.auth.SessionManager;
+import com.example.spark.auth.UserContext;
 
 import spark.ModelAndView;
 import spark.Request;
@@ -21,10 +23,12 @@ public class ViewUtil {
 		if(model.get("msg") == null) { // user notification message
 			model.put("msg", "");
 		}
-		if(request.session().attribute("userContext") == null) { // sessionmgr: isSetUserContext
+		if(!SessionManager.isUserContextSet(request)) { 
 			model.put("authenticated", false);
 		}else {
 			model.put("authenticated", true);
+			UserContext userContext = SessionManager.getUserContext(request); // user context
+			model.put("userContext", userContext);
 		}
         model.put("WebPath", Path.class); // application URLs
         return getVelocityTemplateEngine().render(new ModelAndView(model, templatePath));

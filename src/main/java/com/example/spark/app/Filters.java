@@ -1,9 +1,7 @@
 package com.example.spark.app;
 
-import java.util.HashMap;
-
 import com.example.spark.auth.AuthenticationMgr;
-import com.example.spark.util.JsonUtil;
+import com.example.spark.auth.UserContext;
 
 import spark.Filter;
 import spark.Request;
@@ -24,12 +22,8 @@ public class Filters {
 	 * Check if session token passed in the request is valid.
 	 */
 	public static Filter ensureSessionTokenIsValid = (Request request, Response response) -> {
-		HashMap<String, Object> requestData = JsonUtil.fromJson(request.body());
-		if(requestData == null) {
-			Spark.halt(403, "Invalid request.");
-		}
-		String sessionToken = requestData.get("sessionToken") != null ? (String) requestData.get("sessionToken") : null;
-		if(sessionToken == null || !authMgr.isSessionTokenValid(sessionToken)) {
+		UserContext userContext = request.session().attribute("userContext"); 
+		if(userContext == null || !authMgr.isSessionTokenValid(userContext.getSessionToken())) {
 			Spark.halt(401, "Your session is invalid or expired. Please, login again.");
 		}
 	};
@@ -43,21 +37,6 @@ public class Filters {
 			response.header("Content-Type", "text/html");
 		} else if(RequestUtil.clientAcceptsJson(request)) {
 			response.header("Content-Type", "application/json");
-		}
-	};
-	
-	/**
-	 * After filter
-	 * Regenerate session token and put the new one into the response
-	 */
-	public static Filter regenerateSessionToken = (Request request, Response response) -> {
-		if(response.raw().getStatus() == 200) {
-			HashMap<String, Object> requestData = JsonUtil.fromJson(request.body());
-			String oldSessionToken = requestData.get("sessionToken") != null ? (String) requestData.get("sessionToken") : null;
-			String newSessionToken = authMgr.regenerateSessionToken(oldSessionToken);
-			HashMap<String, Object> responseData = JsonUtil.fromJson(response.body());
-			responseData.put("sessionToken", newSessionToken);
-			response.body(JsonUtil.toJson(responseData));
 		}
 	};
 
