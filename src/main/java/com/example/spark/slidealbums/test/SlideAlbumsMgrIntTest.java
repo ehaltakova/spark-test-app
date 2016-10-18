@@ -16,6 +16,7 @@ import org.junit.Test;
 
 import com.example.spark.app.Application;
 import com.example.spark.app.Path;
+import com.example.spark.auth.AuthenticationMgr;
 import com.example.spark.slidealbums.SlideAlbum;
 import com.example.spark.slidealbums.SlideAlbumsMgr;
 import com.example.spark.util.ConfigUtil;
@@ -37,16 +38,20 @@ import spark.Spark;
  *
  */
 public class SlideAlbumsMgrIntTest {
+	
+	private static String sessionToken;
 
 	@BeforeClass
 	public static void setUp() {
 		Application.main(null);
+		loginUser();
 		createSlideAlbum("Eli Test 123", "Bosch", "Central Locking_01.svg");
 	}
 	
 	@AfterClass
 	public static void cleanUp() {
 		deleteSlideAlbum("Eli Test 123", "Bosch");
+		logoutUser();
 		Spark.stop();
 	}
 	
@@ -90,7 +95,7 @@ public class SlideAlbumsMgrIntTest {
 		String fileName = FilenameUtils.getBaseName(svg);
 		String title = "Test Multipart Request";
 		String customer = "Bosch";
-		String sessionToken = "test123";
+		String sessionToken = SlideAlbumsMgrIntTest.sessionToken;
 		File source = new File("src/test/resources/" + svg);
 		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
@@ -133,7 +138,7 @@ public class SlideAlbumsMgrIntTest {
 		String url = Path.APP_BASE_URL + Path.AJAX_CREATE_SLIDEALBUM;
 		String svg = "Anti-lock Brake System (ABS)_01.svg";
 		String customer = "Fake customer"; // non-existing customer
-		String sessionToken = "test123";
+		String sessionToken = SlideAlbumsMgrIntTest.sessionToken;
 		File source = new File("src/test/resources/" + svg);
 		File dest = new File(ConfigUtil.UPLOAD_DIR + "/" + svg);
 		try {
@@ -156,8 +161,7 @@ public class SlideAlbumsMgrIntTest {
 	public void getSlideAlbumsTest() {
 		
 		Map<String, Object> data = new HashMap<String, Object>();
-		data.put("customers", Arrays.asList("Bosch"));
-		data.put("sessionToken", "exampleSessionTokenHere");
+		data.put("sessionToken", SlideAlbumsMgrIntTest.sessionToken);
 		String json = JsonUtil.toJson(data);
 		HTTPResponse response = HTTPUtil.postRequest(Path.APP_BASE_URL, Path.AJAX_GET_SLIDEALBUMS, json);
 		assertEquals(200, response.status); 		
@@ -336,5 +340,22 @@ public class SlideAlbumsMgrIntTest {
 		}
 		SlideAlbumsMgr mgr = new SlideAlbumsMgr();
 		mgr.createSlideAlbum(title, customer, svg);
+	}
+	
+	// helper method
+	private static void loginUser() {
+		String username = "ehalt";
+		String password = "ehalt";
+		
+		AuthenticationMgr authMgr = new AuthenticationMgr();
+		HTTPResponse response = authMgr.login(username, password);
+		Map<String, Object> data = JsonUtil.fromJson(response.body);
+		sessionToken = (String) data.get("sessionToken");
+	}
+	
+	// helper method
+	private static void logoutUser() {
+		AuthenticationMgr authMgr = new AuthenticationMgr();
+		authMgr.logout(sessionToken);
 	}
 }

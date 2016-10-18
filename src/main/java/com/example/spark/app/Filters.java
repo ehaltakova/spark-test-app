@@ -1,6 +1,7 @@
 package com.example.spark.app;
 
 import com.example.spark.auth.AuthenticationMgr;
+import com.example.spark.auth.SessionManager;
 import com.example.spark.auth.UserContext;
 
 import spark.Filter;
@@ -24,6 +25,7 @@ public class Filters {
 	public static Filter ensureSessionTokenIsValid = (Request request, Response response) -> {
 		UserContext userContext = request.session().attribute("userContext"); 
 		if(userContext == null || !authMgr.isSessionTokenValid(userContext.getSessionToken())) {
+			SessionManager.clearUserContext(request);
 			Spark.halt(401, "Your session is invalid or expired. Please, login again.");
 		}
 	};

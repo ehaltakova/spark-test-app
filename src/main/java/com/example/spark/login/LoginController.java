@@ -6,10 +6,8 @@ import java.util.Map;
 import com.example.spark.app.Path;
 import com.example.spark.auth.AuthenticationMgr;
 import com.example.spark.auth.SessionManager;
-import com.example.spark.auth.UserContext;
 import com.example.spark.util.HTTPUtil.HTTPResponse;
 
-import com.example.spark.util.JsonUtil;
 import com.example.spark.util.ViewUtil;
 
 import spark.Request;
@@ -25,22 +23,16 @@ public class LoginController {
 
 	// get /login
 	public static Route serveLoginPage = (Request request, Response response) -> {
+		if(SessionManager.isUserContextSet(request)) {
+			response.redirect(Path.INDEX);
+		}
 		return ViewUtil.render(request, new HashMap<String, Object>(), Path.Template.LOGIN);
 	};
 	
 	// post /login
 	public static Route handleLogin = (Request request, Response response) -> {
-		
-		// prepare request to external API
-		Map<String, Object> requestBody = new HashMap<String, Object>();
-		requestBody.put("username", request.queryParams("username"));
-		requestBody.put("password", request.queryParams("password"));
-		
-		// call external login web service
 		AuthenticationMgr authMgr = new AuthenticationMgr();
-		
-		// handle response and set user context
-		HTTPResponse result = authMgr.login(JsonUtil.toJson(requestBody));
+		HTTPResponse result = authMgr.login(request.queryParams("username"), request.queryParams("password"));
 		Map<String, Object> model = new HashMap<String, Object>();
 		if(result.status == 200) {
 			SessionManager.setUserContext(request, result.body);
@@ -58,18 +50,9 @@ public class LoginController {
 	};
 	
 	// get /logout
-	public static Route handleLogout = (Request request, Response response) -> {
-		
-		// prepare request to external API
-		UserContext userContext = SessionManager.getUserContext(request);
-		String requestBody = userContext.toJsonString();
-
-		System.err.println(requestBody);
-		// call external login web service				
+	public static Route handleLogout = (Request request, Response response) -> {		
 		AuthenticationMgr authMgr = new AuthenticationMgr();
-		HTTPResponse result = authMgr.logout(requestBody);
-		
-		// handle response and clear user context
+		HTTPResponse result = authMgr.logout(SessionManager.getUserContext(request).getSessionToken());		
 		if (result.status == 200) {
 			SessionManager.clearUserContext(request);
 			response.redirect(Path.LOGIN);

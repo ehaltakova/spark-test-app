@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 
 import org.apache.http.HttpResponse;
@@ -31,14 +32,14 @@ import org.apache.http.impl.client.HttpClientBuilder;
  */
 public class HTTPUtil {
 
-	public static HTTPResponse postRequest(String baseUrl, String path, String requestBody) {
+	public static HTTPResponse postRequest(String baseUrl, String path, String jsonStrBody) {
 		try {
 			String url = baseUrl + path;
 			HttpClient client =  HttpClientBuilder.create().build();
 			HttpPost post = new HttpPost(url);
-			post.setHeader("Content-Type", "application/x-www-form-urlencoded"); 
+			post.setHeader("Content-Type", "application/x-www-form-urlencoded: charset=utf-8"); 
 			post.setHeader("charset", "utf-8");
-			StringEntity body = new StringEntity(requestBody);
+			StringEntity body = new StringEntity(jsonStrBody, Charset.forName("UTF-8"));
 			post.setEntity(body);
 
 			HttpResponse response = client.execute(post);
