@@ -22,7 +22,8 @@ public class IndexController {
 	public static Route serveIndexPage = (Request request, Response response) -> {
 		Map<String, Object> model = new HashMap<>();
 		if(!SessionManager.isUserContextSet(request)) {
-			response.redirect(Path.LOGIN);
+			String contextPath = request.contextPath() != null ? request.contextPath() : "";
+			response.redirect(contextPath + Path.LOGIN);
 		}
 		HashMap<String, String> links = new HashMap<String, String>();
 		model.put("links", links);

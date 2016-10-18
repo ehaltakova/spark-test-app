@@ -1,15 +1,11 @@
 package com.example.spark.app;
 
-import com.example.spark.util.ConfigUtil;
-
 /**
  * Application routes and API end points.
  * @author Elitza Haltakova
  *
  */
 public class Path {
-
-	public static final String APP_BASE_URL = ConfigUtil.APP_NAME.equals("") ? ConfigUtil.HOST + ":" + ConfigUtil.PORT : ConfigUtil.HOST + ":" + ConfigUtil.PORT + "/" + ConfigUtil.APP_NAME;
 		
 	// application urls
 	public static final String INDEX = "/index";
@@ -24,10 +20,6 @@ public class Path {
 	public static final String AJAX_DELETE_SLIDEALBUM = API + "/slidealbums/delete";
 	public static final String AJAX_CREATE_SLIDEALBUM = API + "/slidealbums/create";
 	public static final String AJAX_GET_SLIDEALBUM = API + "test/slidealbum/*/*";
-
-	public static String getAppBaseUrl() {
-		return APP_BASE_URL;
-	}
 
 	public static String getIndex() {
 		return INDEX;

@@ -24,7 +24,8 @@ public class LoginController {
 	// get /login
 	public static Route serveLoginPage = (Request request, Response response) -> {
 		if(SessionManager.isUserContextSet(request)) {
-			response.redirect(Path.INDEX);
+			String contextPath = request.contextPath() != null ? request.contextPath() : "";
+			response.redirect(contextPath + Path.INDEX);
 		}
 		return ViewUtil.render(request, new HashMap<String, Object>(), Path.Template.LOGIN);
 	};
@@ -36,7 +37,8 @@ public class LoginController {
 		Map<String, Object> model = new HashMap<String, Object>();
 		if(result.status == 200) {
 			SessionManager.setUserContext(request, result.body);
-			response.redirect(Path.INDEX);
+			String contextPath = request.contextPath() != null ? request.contextPath() : "";
+			response.redirect(contextPath + Path.INDEX);
 		} else {
 			if(result.status == 401) {
 				model.put("msg", "Invalid credentials. Please, try again.");
@@ -55,7 +57,8 @@ public class LoginController {
 		HTTPResponse result = authMgr.logout(SessionManager.getUserContext(request).getSessionToken());		
 		if (result.status == 200) {
 			SessionManager.clearUserContext(request);
-			response.redirect(Path.LOGIN);
+			String contextPath = request.contextPath() != null ? request.contextPath() : "";
+			response.redirect(contextPath + Path.LOGIN);
 		} else {
 			Map<String, Object> model = new HashMap<String, Object>();
 			model.put("msg", "An internal error occured. Please, contact your system administrator.");

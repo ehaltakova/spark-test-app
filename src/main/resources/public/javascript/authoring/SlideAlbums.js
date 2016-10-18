@@ -14,7 +14,7 @@ SlideAlbumsManager = function() {
  * Call Get Slide Album WS
  */
 SlideAlbumsManager.prototype.getSlideAlbums = function() {
-	var url = "http://localhost:6789/spark/api/slidealbums";
+	var url = "http://localhost:6789/spark/api/slidealbums"; //"http://localhost:4567/salssa/spark/api/slidealbums";
 	var type = 'POST';
 	var data = {}; // request data
 	var callback = (function(response) {
@@ -60,7 +60,7 @@ SlideAlbumsManager.prototype.editSlideAlbum = function(slideAlbum) {
  * @param customer string The name of the slide album customer
  */
 SlideAlbumsManager.prototype.deleteSlideAlbum = function(title, customer) {
-	var url = "http://localhost:6789/spark/api/slidealbums/delete";
+	var url = "http://localhost:6789/spark/api/slidealbums/delete"; //"http://localhost:4567/salssa/spark/api/slidealbums/delete";
 	var type = 'POST';
 	var data = {
 		'title' : title,
@@ -369,7 +369,7 @@ CreateSlideAlbumDialog.prototype.attachFileUploader = function() {
 			'replaceFileInput' : false,
 			'maxFileSize' : 20000000, // 20MB
 			'acceptFileTypes' : /(\.|\/)(svg)$/i,
-			'url' : 'http://localhost:6789/spark/api/slidealbums/create',
+			'url' : 'http://localhost:6789/spark/api/slidealbums/create', //'http://localhost:4567/salssa/spark/api/slidealbums/create',
 			'add' : function(e, data) {
 				var lastSelectedFile = data.files[data.files.length - 1].name;
 				$("#selectedFileName").val(lastSelectedFile);

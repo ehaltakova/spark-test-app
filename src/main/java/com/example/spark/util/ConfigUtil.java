@@ -8,8 +8,7 @@ package com.example.spark.util;
 public class ConfigUtil {
 
 	public static final String HOST = "http://localhost";
-	public static final int PORT = 6789;
-	public static final String APP_NAME = "";
+	public static final int PORT = 6789; //4567;
 	
 	public static final String WORKSPACES_DIR = "D:/xampp-7/htdocs/workspaces";
 	

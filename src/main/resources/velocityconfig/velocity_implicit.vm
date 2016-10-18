@@ -4,5 +4,8 @@
 #* @vtlvariable name="authenticated" type="Java.lang.Boolean" *#
 #* @vtlvariable name="userContext" type="com.example.spark.auth.UserContext" *#
 #* @vtlvariable name="links" type="Java.util.Map" *#
+#* @vtlvariable name="contextPath" type="Java.lang.String" *#
+
+
 
 

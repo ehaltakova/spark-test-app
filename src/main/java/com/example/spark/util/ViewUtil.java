@@ -30,6 +30,7 @@ public class ViewUtil {
 			UserContext userContext = SessionManager.getUserContext(request); // user context
 			model.put("userContext", userContext);
 		}
+        model.put("contextPath", request.contextPath() != null ? request.contextPath() : "");
         model.put("WebPath", Path.class); // application URLs
         return getVelocityTemplateEngine().render(new ModelAndView(model, templatePath));
     }

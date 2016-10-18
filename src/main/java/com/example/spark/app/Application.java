@@ -10,17 +10,26 @@ import com.example.spark.util.CORSUtil;
 import com.example.spark.util.ConfigUtil;
 import com.example.spark.util.Util;
 
+import spark.servlet.SparkApplication;
+
 import org.apache.log4j.Logger;
 /**
  * Main API class defining all the end points
  * @author Elitza Haltakova
  *
  */
-public class Application {
+public class Application implements SparkApplication {
 	
 	final static Logger logger = Logger.getLogger(Application.class);
 	
 	public static void main(String[] args) {
+		
+		Application app = new Application();
+		app.init();
+	}
+
+	@Override
+	public void init() {
 		
 		// configure port and static resource files directory
 		port(ConfigUtil.PORT);
