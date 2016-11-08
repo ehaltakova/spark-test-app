@@ -158,10 +158,10 @@
 	<script src="lib/fileupload/jquery.iframe-transport.js"></script>
 	<script src="lib/fileupload/jquery.fileupload.js"></script>
 	<script src="lib/bootbox.min.js"></script>
-	<script src="javascript/helper/helper.js"></script>
-	<script src="javascript/helper/layoutHelper.js"></script>
-	<script src="javascript/authoring/RESTAPIUtil.js"></script>
-	<script src="javascript/authoring/SlideAlbums.js"></script>
+	<script src="javascript/helper.js"></script>
+	<script src="javascript/layoutHelper.js"></script>
+	<script src="javascript/RESTAPIUtil.js"></script>
+	<script src="javascript/SlideAlbums.js"></script>
 	
 	<script>
 		$( document ).ready(function() {	
