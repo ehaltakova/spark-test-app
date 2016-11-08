@@ -101,16 +101,17 @@ function getDecodedURLParam(queryString, paramName) {
 }
 
 function localize(key, data) {
-	var translation = window['i18n'][key];
-    if (translation) {
-        if (!translation.call) {
-            // Translation is not a function, assume a static string:
-            return translation;
-        }
-        return translation(data);
-    }
-    // No mapping found, the translation value is the translation key:
-    return key;
+//	var translation = window['i18n'][key];
+//    if (translation) {
+//        if (!translation.call) {
+//            // Translation is not a function, assume a static string:
+//            return translation;
+//        }
+//        return translation(data);
+//    }
+//    // No mapping found, the translation value is the translation key:
+//    return key;
+	return key;
 }
 
 function localizeStaticContent() {
