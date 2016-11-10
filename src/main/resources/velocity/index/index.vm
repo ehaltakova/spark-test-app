@@ -177,7 +177,9 @@
 								
 			// load and display slide albums
 			var slideAlbumsMgr = new SlideAlbumsManager();
-			slideAlbumsMgr.getSlideAlbums();
+			//slideAlbumsMgr.getSlideAlbums();
+			//slideAlbumsMgr.getSlideAlbumsWithPromise();
+			slideAlbumsMgr.getSlideAlbumsPromise();
 		});
 	</script>
 ]]#

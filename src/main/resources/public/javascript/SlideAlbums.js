@@ -24,6 +24,45 @@ SlideAlbumsManager.prototype.getSlideAlbums = function() {
 };
 
 /**
+ * Call Get Slide Album WS
+ */
+SlideAlbumsManager.prototype.getSlideAlbumsWithPromise = function() {
+	
+	var self = this;
+	
+	var promise = new Promise(function(resolve, reject) {
+		var url = "http://localhost:6789/spark/api/slidealbums"; //"http://localhost:4567/salssa/spark/api/slidealbums";
+		var type = 'POST';
+		var data = {}; // request data
+		self.restApiUtil.executeWithPromises(url, type, data, resolve, reject, false);
+	});
+	
+	promise.then(function(data) {
+	    console.log('Got data! Promise fulfilled.');
+	    self.slideAlbumsList.displaySlideAlbums(data);
+	}, function(error) {
+	    console.log('Promise rejected.');
+	    console.log(error.message);
+	});
+};
+
+/**
+ * Call Get Slide Album WS
+ */
+SlideAlbumsManager.prototype.getSlideAlbumsPromise = function() {
+	
+	var self = this;
+	var url = "http://localhost:6789/spark/api/slidealbums"; //"http://localhost:4567/salssa/spark/api/slidealbums";
+	var type = 'POST';
+	var data = {}; // request data
+	var callback = (function(response) {
+		return self.slideAlbumsList.displaySlideAlbums(response);
+	});
+	this.restApiUtil.executePromise(url, type, data, callback, false);
+};
+
+
+/**
  * Call Create Slide Album WS.
  * 
  * @param slideAlbum object The data of the slide album to be created
@@ -60,6 +99,7 @@ SlideAlbumsManager.prototype.editSlideAlbum = function(slideAlbum) {
  * @param customer string The name of the slide album customer
  */
 SlideAlbumsManager.prototype.deleteSlideAlbum = function(title, customer) {
+	
 	var url = "http://localhost:6789/spark/api/slidealbums/delete"; //"http://localhost:4567/salssa/spark/api/slidealbums/delete";
 	var type = 'POST';
 	var data = {
@@ -70,6 +110,35 @@ SlideAlbumsManager.prototype.deleteSlideAlbum = function(title, customer) {
 		return this.slideAlbumsList.removeSlideAlbum(title, customer);
 	}).bind(this);
 	this.restApiUtil.execute(url, type, data, callback, false);
+};
+
+/**
+ * Call Delete Slide Album WS
+ * 
+ * @param title string The title of the slide album to be deleted
+ * @param customer string The name of the slide album customer
+ */
+SlideAlbumsManager.prototype.deleteSlideAlbumWithPromise = function(title, customer) {
+	
+	var self = this;
+	var promise = new Promise(function(resolve, reject) {
+		var url = "http://localhost:6789/spark/api/slidealbums/delete"; //"http://localhost:4567/salssa/spark/api/slidealbums/delete";
+		var type = 'POST';
+		var data = {
+			'title' : title,
+			'customer' : customer
+		}; // request data
+		self.restApiUtil.executeWithPromises(url, type, data, resolve, reject, false);
+	});
+	
+	promise.then(function(data) {
+	    console.log('Got data! Promise fulfilled.');
+		return self.slideAlbumsList.removeSlideAlbum(title, customer);
+	}, function(error) {
+		console.log('Promise rejected.');
+	    console.log(error.message);
+	});
+	
 };
 
 /**
@@ -226,7 +295,8 @@ SlideAlbumsList.prototype.displaySlideAlbums = function(resp) {
 			},
 			'callback' : (function(result) {
 				if (result) {
-					this.slideAlbumsMgr.deleteSlideAlbum(title, customer);
+					//this.slideAlbumsMgr.deleteSlideAlbum(title, customer);
+					this.slideAlbumsMgr.deleteSlideAlbumWithPromise(title, customer);
 				}}).bind(this)
 			}).bind(this);
 		}).bind(this));

@@ -39,6 +39,53 @@ RESTAPIUtil.prototype.execute = function(url, type, data, callback, includeBaseR
 	});
 };
 
+RESTAPIUtil.prototype.executeWithPromises = function(url, type, data, resolve, reject, includeBaseRequest) {
+	var restApiMgr = this;
+	$.ajax({
+		type : type,
+		contentType : "application/x-www-form-urlencoded; charset=utf-8",
+		url : url,
+		async : true,
+		data : restApiMgr.handleRequest(data, includeBaseRequest),
+		success : function(resp) {
+			console.log("success");
+			resolve(resp); // we got data here, so resolve the Promise
+		},
+		error : function(resp) {
+			console.log("error");
+			reject(Error(resp.statusText));
+		},
+		dataType : "json"
+	});
+};
+
+RESTAPIUtil.prototype.executePromise = function(url, type, data, callback, includeBaseRequest) {
+	var restApiMgr = this;
+	var promise = new Promise(function(resolve, reject) {
+		$.ajax({
+			type : type,
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			url : url,
+			async : true,
+			data : restApiMgr.handleRequest(data, includeBaseRequest),
+			success : function(resp) {
+				console.log("success");
+				resolve(resp); // we got data here, so resolve the Promise
+			},
+			error : function(resp) {
+				console.log("error");
+				reject(Error(resp.statusText));
+			},
+			dataType : "json"
+		});
+	});
+	promise.then(function(data){
+		callback(restApiMgr.handleResponse(data));
+	}, function(error) {
+		restApiMgr.handleError(error);
+	});
+};
+
 /**
  * Method to do syncronous AJAX call to a SALSSA2 REST web service:
  * - handle service request data passed
